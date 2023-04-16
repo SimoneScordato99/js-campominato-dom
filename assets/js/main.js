@@ -13,7 +13,7 @@ ad azione di pulsante gioca && select
 
 //     variabili
 let btnGioca = document.getElementById('btnGioca')
-
+let difficolta = parseInt(document.getElementById('difficoltaGioco').value)
 let posizioneBombe = bombe()
 console.log(posizioneBombe)
 //click bottone gioca funzione
@@ -54,8 +54,10 @@ btnGioca.addEventListener('click' , function(){
 function bombe(){
     let arrayBombe = []
     let difficolta = parseInt(document.getElementById('difficoltaGioco').value)
+    console.log(difficolta)
     for(let j=0; j<16; j++){
         let randomNumber = random(1 , difficolta )
+        
         if(!arrayBombe.includes(randomNumber)){
             arrayBombe.push(randomNumber)
         } else if(!arrayBombe==j){
